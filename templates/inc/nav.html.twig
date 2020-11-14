@@ -1,0 +1,44 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!--Logo-->
+        <a class="navbar-brand" href="{{ path ('home')}}">
+            
+        </a>
+        <!--Bouton menu lorsqu'écran plus petit qu'une certaine résolution-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--Menu / menu réduit-->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active ml-auto" >
+                    <a class="nav-link" href="#"></span></a>
+                </li>
+                <div class="navmarge">
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="#">A propos</a>
+                    </li>
+                </div>
+                <div class="navmarge">
+                    <li class="nav-item ml-auto navcontact">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </div>
+                <div class="navmarge">
+                    <li class="nav-item ml-auto">
+                        {% if is_granted("ROLE_USER") %}
+                            <a href="{{ path('logout')}}" class="nav-link">Déconnexion</a>
+                        {% else %}
+                        <a class="nav-link rejoignez" href="#">Rejoignez-nous</a>
+                    </li>
+                    <li class="nav-item ml-auto" >
+                            <a class="nav-link dejainscrit" href="#">Déjà inscrit?</a>
+                        {% endif %}
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+
