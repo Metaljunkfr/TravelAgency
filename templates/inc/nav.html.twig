@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <!--Logo-->
         <a class="navbar-brand" href="{{ path ('home')}}">
-            
+            <img src="{{ asset ('build/images/logo.7a7d61b1.png')}}" height="75" width="75" alt="Logo">
         </a>
         <!--Bouton menu lorsqu'écran plus petit qu'une certaine résolution-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,30 +13,27 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active ml-auto" >
-                    <a class="nav-link" href="#"></span></a>
+                    <a class="nav-link" href="{{path ('home')}}">Accueil</span></a>
                 </li>
-                <div class="navmarge">
-                    <li class="nav-item ml-auto">
-                        <a class="nav-link" href="#">A propos</a>
-                    </li>
-                </div>
-                <div class="navmarge">
-                    <li class="nav-item ml-auto navcontact">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </div>
-                <div class="navmarge">
-                    <li class="nav-item ml-auto">
-                        {% if is_granted("ROLE_USER") %}
-                            <a href="{{ path('logout')}}" class="nav-link">Déconnexion</a>
-                        {% else %}
-                        <a class="nav-link rejoignez" href="#">Rejoignez-nous</a>
-                    </li>
-                    <li class="nav-item ml-auto" >
-                            <a class="nav-link dejainscrit" href="#">Déjà inscrit?</a>
-                        {% endif %}
-                    </li>
-                </div>
+               
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" href="#">A propos</a>
+                </li>
+            
+                <li class="nav-item ml-auto navcontact">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            
+                <li class="nav-item ml-auto">
+                    {% if is_granted("ROLE_USER") %}
+                        <a href="{{ path('logout')}}" class="nav-link">Déconnexion</a>
+                    {% else %}
+                    <a class="nav-link rejoignez" href="inscription">S'inscrire</a>
+                </li>
+                <li class="nav-item ml-auto" >
+                        <a class="nav-link dejainscrit" href="login">Déjà inscrit?</a>
+                    {% endif %}
+                </li>
             </ul>
         </div>
     </div>
